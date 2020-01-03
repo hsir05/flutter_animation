@@ -23,19 +23,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  double _width = 100.0;
-  double _height = 100.0;
+  double _width = 50.0;
+  double _height = 50.0;
   var _color = Colors.green;
   bool _visible = false;
 
-  double _x = 30.0;
-  double _y = 40.0;
+  double _x = -30.0;
+  double _y = -40.0;
 
   void _animation() {
    print('动画');
    setState(() {
-     _width = 200.0;
-     _height = 300.0;
+     _width = 150.0;
+     _height = 200.0;
      _color = Colors.purple;
 
      _x = 0;
@@ -73,8 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
           alignment: Alignment(_x, _y),
           duration: Duration(seconds: 1),
           child: Container(
-            width: 100.0,
-            height: 100.0,
+            width: 50.0,
+            height: 50.0,
             color: Colors.black45,
           ),
         ),
@@ -86,8 +86,8 @@ class _MyHomePageState extends State<MyHomePage> {
       duration: Duration(seconds: 1), 
       opacity: _visible ? 1.0 : 0.0,
       child: Container(
-        width: 200.0,
-        height: 200.0,
+        width: 100.0,
+        height: 100.0,
         color: Colors.blue,
       )
     );
@@ -110,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
+      
     );
   }
 }
