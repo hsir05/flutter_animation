@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,36 +23,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  double _width = 100.0;
+  double _height = 100.0;
+  var _color = Colors.green;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _animation() {
+   print('动画');
+   setState(() {
+     _width = 200.0;
+     _height = 300.0;
+     _color = Colors.purple;
+   });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('flutter 动画')
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+      body:Center(
+        child: AnimatedContainer(
+        // 定义动画需要多长时间
+        duration: Duration(seconds:1),
+        // 提供一个可选的曲线，使动画感觉更流畅。
+        curve: Curves.fastOutSlowIn,
+        //长度宽度使用变量  实现组件缩放动画
+        width: _width,
+        height: _height,
+        decoration: BoxDecoration(
+          //颜色 圆角度使用变量
+          color: _color,
         ),
       ),
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _animation,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
