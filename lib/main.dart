@@ -27,22 +27,23 @@ class _MyHomePageState extends State<MyHomePage> {
   double _height = 100.0;
   var _color = Colors.green;
 
+  double _x = 30.0;
+  double _y = 40.0;
+
   void _animation() {
    print('动画');
    setState(() {
      _width = 200.0;
      _height = 300.0;
      _color = Colors.purple;
+
+     _x = 0;
+     _y = 0;
    });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('flutter 动画')
-      ),
-      body:Center(
+  Widget _size(){
+    return Center(
         child: AnimatedContainer(
         // 定义动画需要多长时间
         duration: Duration(seconds:1),
@@ -56,6 +57,38 @@ class _MyHomePageState extends State<MyHomePage> {
           color: _color,
         ),
       ),
+      );
+  }
+
+  Widget _animatedAlign() {
+    return Container(
+      width: 600.0,
+      height: 900.0,
+      color: Colors.black12,
+      child: AnimatedAlign(
+        // xy坐标 是决定组件再父容器中的位置。 修改坐标即可完成组件平移
+          alignment: Alignment(_x, _y),
+          duration: Duration(seconds: 1),
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+            color: Colors.black45,
+          ),
+        ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('flutter 动画')
+      ),
+      body: ListView(
+        children: <Widget>[
+          // _size(),
+          _animatedAlign(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _animation,
