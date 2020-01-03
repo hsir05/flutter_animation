@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _animatedAlign() {
     return Container(
       width: 600.0,
-      height: 900.0,
+      height: 500.0,
       color: Colors.black12,
       child: AnimatedAlign(
         // xy坐标 是决定组件再父容器中的位置。 修改坐标即可完成组件平移
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: <Widget>[
-          // _size(),
+          _size(),
           _animatedAlign(),
         ],
       ),
