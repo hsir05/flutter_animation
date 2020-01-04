@@ -32,17 +32,29 @@ class _MyHomePageState extends State<MyHomePage> {
   double _y = -40.0;
 
   void _animation() {
-   print('动画');
-   setState(() {
-     _width = 150.0;
-     _height = 200.0;
-     _color = Colors.purple;
+      print('动画');
 
-     _x = 0;
-     _y = 0;
+      setState(() {
+        if (!_visible) {
+          _width = 150.0;
+          _height = 200.0;
+          _color = Colors.purple;
 
-     _visible = true;
-   });
+          _x = 0;
+          _y = 0;
+
+          _visible = true;
+        } else {
+          _width = 50.0;
+          _height = 50.0;
+          _color = Colors.green;
+          _visible = false;
+
+          _x = -30.0;
+          _y = -40.0;
+        }
+        });
+    
   }
 
   Widget _size(){
@@ -71,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: AnimatedAlign(
         // xy坐标 是决定组件再父容器中的位置。 修改坐标即可完成组件平移
           alignment: Alignment(_x, _y),
-          duration: Duration(seconds: 1),
+          duration: Duration(seconds: 5),
           child: Container(
             width: 50.0,
             height: 50.0,
@@ -92,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
       )
     );
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
