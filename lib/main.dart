@@ -15,14 +15,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget  {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
+  AnimationController controller;
+  //doubler类型动画
+  Animation<double> doubleAnimation;
+   //圆角动画
+  Animation<BorderRadius> radiusAnimation;
+
   double _width = 50.0;
   double _height = 50.0;
   var _color = Colors.green;
@@ -30,6 +36,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
   double _x = -30.0;
   double _y = -40.0;
+
+  @override
+  void initState() {
+    super.initState();
+    //创建AnimationController
+    controller = new AnimationController(
+        vsync: this, duration: Duration(milliseconds: 2000));
+        doubleAnimation = new Tween<double>(begin: 0.0, end: 200.0).animate(controller)
+        ..addListener(() {
+          setState(() {});
+        })
+      ..addStatusListener((AnimationStatus status) {
+      	//执行完成后反向执行
+        if (status == AnimationStatus.completed) {
+          controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+        //反向执行完成，正向执行
+          controller.forward();
+        }
+      });
+   
+    radiusAnimation = BorderRadiusTween(begin: BorderRadius.circular(0),end: BorderRadius.circular(50)).animate(controller);
+    print(3333333);
+    print(radiusAnimation.value);
+    //启动动画
+    controller.forward();
+  }
 
   void _animation() {
       print('动画');
@@ -51,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _visible = false;
 
           _x = -30.0;
-          _y = -40.0;
+          _y =  -40.0;
         }
         });
     
@@ -105,6 +138,16 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
   
+  Widget _rect(){
+    return Padding(
+      padding: EdgeInsets.all(100.0),
+      child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(borderRadius: radiusAnimation.value,color: Colors.blue),
+            ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,6 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _opacity(),
           _size(),
           _animatedAlign(),
+          _rect(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -125,5 +169,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       
     );
+  }
+
+   @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
   }
 }
