@@ -6,10 +6,21 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
+
+  Widget _listItem(title) {
+    return ListTile(
+      leading: Icon(Icons.cake),
+      title: Text(title),
+      trailing: Icon(Icons.arrow),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('3333')
+    return ListView(
+      children: <Widget>[
+        _listItem('动画')
+      ],
     );
   }
 }
