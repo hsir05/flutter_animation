@@ -11,7 +11,7 @@ class _IndexPageState extends State<IndexPage> {
     return ListTile(
       leading: Icon(Icons.cake),
       title: Text(title),
-      trailing: Icon(Icons.arrow),
+      trailing: Icon(Icons.arrow_back),
     );
   }
 
