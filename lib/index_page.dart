@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
 import './routers/application.dart';
 
+
 class IndexPage extends StatefulWidget {
   @override
   _IndexPageState createState() => _IndexPageState();
@@ -38,7 +39,8 @@ class _IndexPageState extends State<IndexPage> {
           body:ListView(
             children: <Widget>[
                 _listItem('透明度', Icons.opacity, '/opacity'),
-                _listItem('圆角变化',Icons.remove_circle,  '/radius')
+                _listItem('圆角变化',Icons.remove_circle,  '/radius'),
+                _listItem('位移变化',Icons.remove_circle,  '/size')
             ],
           )
           ),

@@ -3,6 +3,8 @@ import 'package:fluro/fluro.dart';
 import '../index_page.dart';
 import '../pages/opacity_page.dart';
 import '../pages/radius_page.dart';
+import '../pages/size_pages.dart';
+
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -18,3 +20,9 @@ Handler radiusHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return RadiusPage();
 });
+
+Handler sizeHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return SizePage();
+});
+

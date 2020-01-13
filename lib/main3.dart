@@ -24,10 +24,7 @@ class MyHomePage extends StatefulWidget  {
 
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
   AnimationController controller;
-  //doubler类型动画
   Animation<double> doubleAnimation;
-  //  //圆角动画
-  // Animation<BorderRadius> radiusAnimation;
 
   double _width = 50.0;
   double _height = 50.0;
@@ -56,10 +53,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         controller.forward();
       }
     });
-   
-    // radiusAnimation = BorderRadiusTween(begin: BorderRadius.circular(0),end: BorderRadius.circular(50)).animate(controller);
-    // print(radiusAnimation.value);
-    //启动动画
     controller.forward();
   }
 
@@ -81,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           _height = 50.0;
           _color = Colors.green;
           _visible = false;
+          
 
           _x = -30.0;
           _y =  -40.0;
@@ -124,29 +118,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         ),
     );
   }
-
-  Widget _opacity(){
-    return AnimatedOpacity(
-      duration: Duration(seconds: 1), 
-      opacity: _visible ? 1.0 : 0.0,
-      child: Container(
-        width: 100.0,
-        height: 100.0,
-        color: Colors.blue,
-      )
-    );
-  }
-  
-  Widget _rect(){
-    return Padding(
-      padding: EdgeInsets.all(100.0),
-      child: Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(borderRadius: radiusAnimation.value,color: Colors.blue),
-            ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,10 +126,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       ),
       body: ListView(
         children: <Widget>[
-          _opacity(),
           _size(),
           _animatedAlign(),
-          _rect(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
