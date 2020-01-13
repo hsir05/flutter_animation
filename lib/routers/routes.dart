@@ -3,7 +3,8 @@ import 'package:fluro/fluro.dart';
 import './router_handler.dart';
 
 class Routes{
-  static String root='/'; 
+  static String root='/';
+  static String opacity = '/opacity';
 
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -13,5 +14,6 @@ class Routes{
     );
     
     router.define(root, handler: homeHandler);
+    router.define(opacity, handler: opacityHandler);
   }
 }
