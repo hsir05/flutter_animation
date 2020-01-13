@@ -4,7 +4,7 @@ import 'index_page.dart';
 import './routers/routes.dart';
 import './routers/application.dart';
 
-void main() async{
+void main(){
   runApp(MyApp());
 }
 
