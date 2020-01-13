@@ -7,6 +7,7 @@ class Routes{
   static String opacity = '/opacity';
   static String radius = '/radius';
   static String size = '/size';
+  static String translation = '/translation';
 
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -19,5 +20,6 @@ class Routes{
     router.define(opacity, handler: opacityHandler);
     router.define(radius, handler: radiusHandler);
     router.define(size, handler: sizeHandler);
+    router.define(translation, handler: translationPageHandle);
   }
 }

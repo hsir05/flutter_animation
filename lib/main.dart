@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 
      return MaterialApp(
             title:'flutter 动画',
-            debugShowCheckedModeBanner: false,
+            // debugShowCheckedModeBanner: false,
             onGenerateRoute: Application.router.generator,
             home: IndexPage()
         );

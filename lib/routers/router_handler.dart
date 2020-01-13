@@ -4,7 +4,7 @@ import '../index_page.dart';
 import '../pages/opacity_page.dart';
 import '../pages/radius_page.dart';
 import '../pages/size_pages.dart';
-
+import '../pages/translation_page.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -26,3 +26,7 @@ Handler sizeHandler = Handler(
   return SizePage();
 });
 
+Handler translationPageHandle = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return TranslationPage();
+});

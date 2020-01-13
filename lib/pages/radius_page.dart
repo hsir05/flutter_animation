@@ -9,7 +9,9 @@ class _RadiusPageState extends State<RadiusPage> with SingleTickerProviderStateM
    AnimationController controller;
   //圆角动画
   Animation<BorderRadius> radiusAnimation;
-Animation<double> doubleAnimation;
+  Animation<double> doubleAnimation;
+
+
   @override
   void initState() {
     super.initState();
@@ -30,6 +32,12 @@ Animation<double> doubleAnimation;
 
     radiusAnimation = BorderRadiusTween(begin: BorderRadius.circular(0),end: BorderRadius.circular(50)).animate(controller);
     controller.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
   }
 
   Widget _radius(){
@@ -60,9 +68,5 @@ Animation<double> doubleAnimation;
       )
     );
   }
-  @override
-  void dispose() {
-    super.dispose();
-    controller.dispose();
-  }
+ 
 }
