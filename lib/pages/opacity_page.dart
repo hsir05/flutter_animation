@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class OPacityPage extends StatefulWidget {
+class OpacityPage extends StatefulWidget {
   @override
-  _OPacityPageState createState() => _OPacityPageState();
+  _OpacityPageState createState() => _OpacityPageState();
 }
 
-class _OPacityPageState extends State<OPacityPage> with SingleTickerProviderStateMixin{
+class _OpacityPageState extends State<OpacityPage> with SingleTickerProviderStateMixin{
   bool _visible = false;
 
   @override

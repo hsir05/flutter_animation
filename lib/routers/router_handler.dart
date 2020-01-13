@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import '../index_page.dart';
 import '../pages/opacity_page.dart';
+import '../pages/radius_page.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -10,5 +11,10 @@ Handler homeHandler = Handler(
 
 Handler opacityHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
-  return OPacityPage();
+  return OpacityPage();
+});
+
+Handler radiusHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return RadiusPage();
 });

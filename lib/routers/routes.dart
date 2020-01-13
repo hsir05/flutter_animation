@@ -5,6 +5,7 @@ import './router_handler.dart';
 class Routes{
   static String root='/';
   static String opacity = '/opacity';
+  static String radius = '/radius';
 
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -15,5 +16,6 @@ class Routes{
     
     router.define(root, handler: homeHandler);
     router.define(opacity, handler: opacityHandler);
+    router.define(radius, handler: radiusHandler);
   }
 }

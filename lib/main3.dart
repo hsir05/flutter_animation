@@ -26,8 +26,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   AnimationController controller;
   //doubler类型动画
   Animation<double> doubleAnimation;
-   //圆角动画
-  Animation<BorderRadius> radiusAnimation;
+  //  //圆角动画
+  // Animation<BorderRadius> radiusAnimation;
 
   double _width = 50.0;
   double _height = 50.0;
@@ -41,25 +41,24 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   void initState() {
     super.initState();
     //创建AnimationController
-    controller = new AnimationController(
-        vsync: this, duration: Duration(milliseconds: 2000));
-        doubleAnimation = new Tween<double>(begin: 0.0, end: 200.0).animate(controller)
-        ..addListener(() {
-          setState(() {});
-        })
-      ..addStatusListener((AnimationStatus status) {
-      	//执行完成后反向执行
-        if (status == AnimationStatus.completed) {
-          controller.reverse();
-        } else if (status == AnimationStatus.dismissed) {
-        //反向执行完成，正向执行
-          controller.forward();
-        }
-      });
+    controller = new AnimationController(vsync: this, duration: Duration(milliseconds: 2000));
+    
+    doubleAnimation = new Tween<double>(begin: 0.0, end: 200.0).animate(controller)
+      ..addListener(() {
+      setState(() {});
+    })
+    ..addStatusListener((AnimationStatus status) {
+      //执行完成后反向执行
+      if (status == AnimationStatus.completed) {
+        controller.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+      //反向执行完成，正向执行
+        controller.forward();
+      }
+    });
    
-    radiusAnimation = BorderRadiusTween(begin: BorderRadius.circular(0),end: BorderRadius.circular(50)).animate(controller);
-    print(3333333);
-    print(radiusAnimation.value);
+    // radiusAnimation = BorderRadiusTween(begin: BorderRadius.circular(0),end: BorderRadius.circular(50)).animate(controller);
+    // print(radiusAnimation.value);
     //启动动画
     controller.forward();
   }

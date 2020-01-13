@@ -10,12 +10,12 @@ class IndexPage extends StatefulWidget {
 
 class _IndexPageState extends State<IndexPage> {
 
-  Widget _listItem(title, path) {
+  Widget _listItem(title, icon, path) {
     return ListTile(
       onTap: (){
         Application.router.navigateTo(context, path, transition: TransitionType.inFromRight);
       },
-      leading: Icon(Icons.opacity),
+      leading: Icon(icon),
       title: Text(title),
       trailing: Icon(Icons.keyboard_arrow_right),
     );
@@ -37,7 +37,8 @@ class _IndexPageState extends State<IndexPage> {
             centerTitle: true),
           body:ListView(
             children: <Widget>[
-                _listItem('透明度', '/opacity')
+                _listItem('透明度', Icons.opacity, '/opacity'),
+                _listItem('圆角变化',Icons.remove_circle,  '/radius')
             ],
           )
           ),
