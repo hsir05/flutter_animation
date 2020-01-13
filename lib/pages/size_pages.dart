@@ -90,4 +90,9 @@ class _SizePageState extends State<SizePage> with SingleTickerProviderStateMixin
       ),
     );
   }
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
 }

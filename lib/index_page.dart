@@ -24,12 +24,7 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: GestureDetector(
-        onHorizontalDragEnd: (details){
-          Navigator.pop(context);
-        },
-        child: Scaffold(
+    return Scaffold(
           appBar: AppBar(
             brightness: Brightness.dark,
             elevation: 0,
@@ -43,8 +38,6 @@ class _IndexPageState extends State<IndexPage> {
                 _listItem('位移变化',Icons.remove_circle,  '/size')
             ],
           )
-          ),
-      )
-    );
+          );
   }
 }

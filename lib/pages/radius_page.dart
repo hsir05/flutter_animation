@@ -60,4 +60,9 @@ Animation<double> doubleAnimation;
       )
     );
   }
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
 }
