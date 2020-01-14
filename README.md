@@ -21,7 +21,7 @@ Animation类是Flutter动画中核心的抽象类，它包含动画的当前值�
 + 值监听：addListener、removeListener
 + 状态监听：addStatusListener、removeStatusListener
 
-## 3 动画控制`AnimationController`
+## 3 动画控制AnimationController
 
 + AnimationController是一个特殊的Animation对象，在屏幕刷新的每一帧，就会生成一个新的值，默认情况下，AnimationController在给定的时间段内会线性的生成从0.0到1.0的数字
 
