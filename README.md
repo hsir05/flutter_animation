@@ -50,3 +50,73 @@ Animation类是Flutter动画中核心的抽象类，它包含动画的当前值�
 6. StepTween
 7. ConstantTween
 
+## 6. 示例
+
+### 6.1 示例1-ColorTween使用
+
+实现背景颜色的渐变效果
+
+```flutter
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+      home: HomePage(),
+    ));
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  Animation<Color> _doubleAnim;
+  AnimationController _animationController;
+
+  //四种状态
+  //1 dismissed 初始状态
+  //2 forward 从头到尾播放状态
+  //3 reverse 从尾到头播放状态
+  //4 completed 完成状态
+  @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1))..forward();
+    _doubleAnim = ColorTween(begin: Colors.red, end: Colors.white)
+        .animate(_animationController)
+          ..addListener(() {
+            setState(() {});
+          })
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              _animationController.reverse();
+            } else if (status == AnimationStatus.dismissed) {
+              _animationController.forward();
+            }
+          });
+//    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _animationController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          width: 200.0,
+          height: 200.0,
+          color: _doubleAnim.value,
+          child: FlutterLogo(),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: null),
+    );
+  }
+}
+```
