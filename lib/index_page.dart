@@ -37,6 +37,7 @@ class _IndexPageState extends State<IndexPage> {
                 _listItem('圆角变化', Icons.remove_circle,  '/radius'),
                 _listItem('大小变化', Icons.remove_circle,  '/size'),
                 _listItem('平移变化', Icons.remove_circle,  '/translation'),
+                _listItem('Curves', Icons.remove_circle,  '/curves'),
             ],
           )
           );

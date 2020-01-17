@@ -5,6 +5,7 @@ import '../pages/opacity_page.dart';
 import '../pages/radius_page.dart';
 import '../pages/size_pages.dart';
 import '../pages/translation_page.dart';
+import '../pages/curves_page.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -29,4 +30,9 @@ Handler sizeHandler = Handler(
 Handler translationPageHandle = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return TranslationPage();
+});
+
+Handler curvesPageHandle = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return CurvesPage();
 });

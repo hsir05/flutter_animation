@@ -8,6 +8,7 @@ class Routes{
   static String radius = '/radius';
   static String size = '/size';
   static String translation = '/translation';
+  static String curves = '/curves';
 
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -21,5 +22,6 @@ class Routes{
     router.define(radius, handler: radiusHandler);
     router.define(size, handler: sizeHandler);
     router.define(translation, handler: translationPageHandle);
+    router.define(curves, handler: curvesPageHandle);
   }
 }
