@@ -5,8 +5,7 @@ class CurvesPage extends StatefulWidget {
   _CurvesPageState createState() => _CurvesPageState();
 }
 
-class _CurvesPageState extends State<CurvesPage>
-    with SingleTickerProviderStateMixin {
+class _CurvesPageState extends State<CurvesPage>with SingleTickerProviderStateMixin {
   Animation<double> _doubleAnim;
   AnimationController _animationController;
 
