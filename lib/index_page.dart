@@ -35,10 +35,10 @@ class _IndexPageState extends State<IndexPage> {
             children: <Widget>[
                 _listItem('透明度', Icons.opacity, '/opacity'),
                 _listItem('圆角变化', Icons.remove_circle,  '/radius'),
-                _listItem('大小变化', Icons.remove_circle,  '/size'),
-                _listItem('平移变化', Icons.remove_circle,  '/translation'),
-                _listItem('Curves', Icons.remove_circle,  '/curves'),
-                _listItem('4d', Icons.remove_circle,  '/fourD'),
+                _listItem('大小变化', Icons.format_size,  '/size'),
+                _listItem('平移变化', Icons.track_changes,  '/translation'),
+                _listItem('Curves', Icons.traffic,  '/curves'),
+                _listItem('4d', Icons.view_list,  '/fourD'),
             ],
           )
           );
