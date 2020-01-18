@@ -6,6 +6,7 @@ import '../pages/radius_page.dart';
 import '../pages/size_pages.dart';
 import '../pages/translation_page.dart';
 import '../pages/curves_page.dart';
+import '../pages/fourD_page.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -35,4 +36,9 @@ Handler translationPageHandle = Handler(
 Handler curvesPageHandle = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return CurvesPage();
+});
+
+Handler fourDPageHandle = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return FourDPage();
 });

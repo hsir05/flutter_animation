@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FourPage extends StatefulWidget {
+class FourDPage extends StatefulWidget {
   @override
-  _FourPageState createState() => _FourPageState();
+  _FourDPageState createState() => _FourDPageState();
 }
 
-class _FourPageState extends State<FourPage> {
+class _FourDPageState extends State<FourDPage> {
   Offset _offset = Offset.zero;
 
   @override
