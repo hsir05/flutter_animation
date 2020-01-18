@@ -15,7 +15,7 @@ class _FourDPageState extends State<FourDPage> {
          brightness: Brightness.dark,
           elevation: 0,
           backgroundColor: Colors.redAccent,
-        title: Text('Cure')
+        title: Text('4D')
       ),
       body: Center(
         child: Transform(
