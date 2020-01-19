@@ -7,6 +7,7 @@ import '../pages/size_pages.dart';
 import '../pages/translation_page.dart';
 import '../pages/curves_page.dart';
 import '../pages/threeD_page.dart';
+import '../pages/card_page.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -41,4 +42,9 @@ Handler curvesPageHandle = Handler(
 Handler threeDPageHandle = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return ThreeDPage();
+});
+
+Handler cardPageHandle = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return CardPage();
 });
