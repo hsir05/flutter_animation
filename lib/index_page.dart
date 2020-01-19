@@ -38,7 +38,7 @@ class _IndexPageState extends State<IndexPage> {
                 _listItem('大小变化', Icons.format_size,  '/size'),
                 _listItem('平移变化', Icons.track_changes,  '/translation'),
                 _listItem('Curves', Icons.traffic,  '/curves'),
-                _listItem('4d', Icons.view_list,  '/fourD'),
+                _listItem('3d', Icons.view_list,  '/threeD'),
             ],
           )
           );
