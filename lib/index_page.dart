@@ -40,6 +40,7 @@ class _IndexPageState extends State<IndexPage> {
                 _listItem('Curves', Icons.traffic,  '/curves'),
                 _listItem('3d', Icons.view_list,  '/threeD'),
                 _listItem('card翻转', Icons.card_travel,  '/card'),
+                _listItem('six', Icons.card_travel,  '/six'),
             ],
           )
           );
