@@ -118,6 +118,12 @@ class _SixPageState extends State<SixPage>
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+         brightness: Brightness.dark,
+          elevation: 0,
+          backgroundColor: Colors.redAccent,
+        title: Text('six')
+      ),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
