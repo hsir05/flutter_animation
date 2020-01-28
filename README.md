@@ -2,7 +2,7 @@
 
 ## 1. 概述
 
-flutter 动画分为`Tween Animation 补间动画 `和 `Physics-based Animation 基于物理动画`
+flutter 动画分为`Tween Animation 补间动画`和 `Physics-based Animation 基于物理动画`
 
 + 在补间动画中，定义了开始点和结束点、时间线以及定义转换时间和速度的曲线，然后由框架自动计算如何从开始点过渡到结束点。
 + 在基于物理的动画(遵循物理学定律)中，运动被模拟为与真实世界的行为相似，可以模拟弹簧、阻尼、重力等物理效果。例如，当你掷球时，它在何处落     地，取决于抛球速度有多快、球有多重、距离地面有多远。类似地，将连接在弹簧上的球落下（并弹起）与连接到绳子上的球放下的方式也是不同
@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage>
 
 ### 6.4. 示例4-3D效果
 
-```
+```flutter
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -325,7 +325,7 @@ class _HomePageState extends State<HomePage> {
 
 ### 6.5. 示例5-卡片翻转效果
 
-```
+```flutter
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -440,7 +440,7 @@ class CardTwo extends StatelessWidget {
 
 ### 6.6. 示例6
 
-```
+```flutter
 import 'dart:math';
 
 import 'package:flutter/material.dart';
