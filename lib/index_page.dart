@@ -41,7 +41,7 @@ class _IndexPageState extends State<IndexPage> {
                 _listItem('3d', Icons.view_list,  '/threeD'),
                 _listItem('card翻转', Icons.card_travel,  '/card'),
                 _listItem('six', Icons.card_travel,  '/six'),
-                _listItem('chart', Icons.card_travel,  '/chart'),
+                _listItem('chart', Icons.pie_chart,  '/chart'),
             ],
           )
           );
