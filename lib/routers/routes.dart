@@ -12,6 +12,7 @@ class Routes{
   static String threeD = '/threeD';
   static String card = '/card';
   static String six = '/six';
+  static String chart = '/chart';
 
   static void configureRoutes(Router router){
     router.notFoundHandler = new Handler(
@@ -29,5 +30,6 @@ class Routes{
     router.define(threeD, handler: threeDPageHandle);
     router.define(card, handler: cardPageHandle);
     router.define(six, handler: sixPageHandle);
+    router.define(chart, handler: chartPageHandle);
   }
 }

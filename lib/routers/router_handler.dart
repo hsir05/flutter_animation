@@ -9,6 +9,7 @@ import '../pages/curves_page.dart';
 import '../pages/threeD_page.dart';
 import '../pages/card_page.dart';
 import '../pages/six_page.dart';
+import '../pages/chart_page.dart';
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
@@ -55,4 +56,9 @@ Handler cardPageHandle = Handler(
 Handler sixPageHandle = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return SixPage();
+});
+
+Handler chartPageHandle = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>>params) {
+  return ChartPage();
 });
