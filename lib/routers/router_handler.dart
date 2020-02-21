@@ -12,7 +12,6 @@ import '../pages/six_page.dart';
 import '../pages/chart_page.dart';
 import '../pages/chart2_page.dart';
 
-
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return IndexPage();
@@ -47,8 +46,6 @@ Handler threeDPageHandle = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
   return ThreeDPage();
 });
-
-
 
 Handler cardPageHandle = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>>params) {
